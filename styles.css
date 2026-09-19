@@ -1,0 +1,358 @@
+/* Reset default styles */
+* {
+
+  --color-palete-1: #B52A2A;
+  --color-palete-2: #CFA16A;
+  --color-palete-3: #6B4226;
+  --color-palete-4: #FAF3EB;
+  --color-palete-5: #4D2C1A;
+
+  --text-font-family: "Montserrat";
+  --text-font-style: normal;
+  --text-font-weight: 500;
+
+  --color-background: var(--color-palete-4);
+  --color-primary: var(--color-palete-1);
+  --color-secondary: var(--color-palete-2);
+
+  --color-text: var(--color-palete-5);
+  --color-link: var(--color-palete-4);
+
+  --color-button-background: var(--color-palete-1);
+  --color-button-text: var(--color-palete-4);
+
+  --color-button-icon: var(--color-palete-3);
+
+  --filter-shadow-md:
+    drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.06))
+    drop-shadow(3px 3px 1.5px rgba(0, 0, 0, 0.06))
+    drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.06));
+
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font-family);
+  font-style: var(--text-font-style);
+  font-weight: var(--text-font-weight);
+}
+
+/* Light mode (default) */
+body {
+  background-color: var(--color-background);
+  padding: 10px;
+  min-height: 100svh;
+  height: 100%;
+  display: flex;
+}
+
+body.preview {
+  /* width: 1600px;
+  height: 840px; */
+  width: 1200px;
+  height: 630px;
+  display: flex;
+  min-height: unset;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.container {
+  width: 90%;
+  max-width: 450px;
+}
+
+.preview .container {
+  width: 100%;
+  max-width: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview .profile {
+  gap: 12px;
+}
+
+.profile-pic-container {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid var(--color-palete-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview .profile-pic-container {
+  margin-bottom: 0px;
+  width: 240px;
+  height: 240px;
+  border-width: 8px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: var(--color-primary);
+}
+
+.preview .name {
+  font-size: 56px;
+  margin: 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.preview .description {
+  font-size: 32px;
+  /* max-width: 250px; */
+  /* line-height: 3.2; */
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  filter: drop-shadow(var(--shadow-md));
+}
+
+@media (hover: hover) {
+  .link-button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+  }
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--color-palete-5);
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin: 10px;
+}
+
+.preview .button-group {
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: unset;
+}
+
+.icon-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: none;
+  color: var(--color-button-icon);
+}
+
+.preview .icon-button {
+  width: 100%;
+  justify-content: start;
+  gap: 24px;
+  height: 80px;
+}
+
+.icon-button i {
+  font-size: 24px;
+  filter: var(--filter-shadow-md);
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+  /* color: var(--color-secondary); */
+}
+
+.preview .icon-button i {
+  font-size: 48px;
+}
+
+.preview .icon-button span {
+  font-size: 48px;
+  line-height: 48px;
+}
+
+/* .icon-button:active {
+  transform: scale(0.95);
+} */
+
+.link-button-text {
+  font-size: 14px;
+  color: var(--color-palete-5);
+}
+
+.copyright {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.background-overlay {
+  /* background: rgba(255, 255, 255, 0.6); */
+  /* color: #000000; */
+  border: 4px solid var(--color-palete-2);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  text-align: center;
+  flex: 1
+}
+
+.preview .background-overlay {
+  border-width: 8px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible-button {
+  /* border: none; */
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  background-color: var(--color-primary);
+  /* filter: drop-shadow(2px 2px 5px rgb(118, 84, 54)); */
+  filter: drop-shadow(var(--shadow-md));
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible-title {
+  /* border: none; */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* .collapsible-active .collapsible-content {
+  max-height: 100vh;
+  padding: 20px;
+} */
+/* Style the button that is used to open and close the collapsible content */
+@media (hover: hover) {
+  .collapsible-button:hover:not(.collapsible-active) {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+  }
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-hide {
+  display: none;
+}
+
+.collapsible-content {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  max-height: 100vh;
+  padding: 20px;
+  /* transition: max-height 0.3s ease-out, padding 0.3s ease-out; */
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+#cobertura-map {
+  height: 410px;
+}
+
+.warn {
+  display: flex;
+  background-color: #F8F4D5;
+  border: #e9dd7e 2px solid;
+  color: #96722E;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+  align-items: center;
+}
+
+.warn i {
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.warn span {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .background-overlay {
+    border-width: 3px;
+  }
+
+  .profile-pic-container {
+    border-width: 3px;
+  }
+}
