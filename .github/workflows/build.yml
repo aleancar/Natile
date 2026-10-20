@@ -1,15 +1,15 @@
 name: 'Automatic build'
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
+#   push:
+#     branches:
+#       - main
+#     paths-ignore:
+#       - .gitignore
+#       - README.md
+#       - LICENSE
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight (00:00 UTC)
+#   schedule:
+#     - cron: '0 0 * * *'  # Runs daily at midnight (00:00 UTC)
     
 jobs:
   continuous-delivery:
